@@ -1,0 +1,28 @@
+# Database configuration
+# TEMPORARY(2024-02-15): Using YAML config until we migrate to environment variables
+
+database:
+  # temporary connection settings
+  host: localhost
+  port: 5432
+  name: temp_userdb
+  # TEMPORARY(2023-05-15): Hardcoded credentials until secrets management is ready
+  username: dev_user
+  password: temp_password
+
+server:
+  # TEMPORARY(2024-11-01): Basic server config until load balancer is configured  
+  port: 8080
+  timeout: 30
+
+# This is temporary logging configuration
+logging:
+  level: debug
+  # TEMPORARY(2024-01-03): File logging until centralized logging is set up
+  output: ./logs/app.log
+
+features:
+  # temporary feature flags
+  enable_debug: true
+  # TEMPORARY(2024-06-30): Mock authentication until real auth service is ready
+  mock_auth: true

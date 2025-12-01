@@ -1,0 +1,15 @@
+{
+  "search.exclude": {
+    "test/fixture/**": true
+  },
+  "files.watcherExclude": {
+    "test/fixture/**": true
+  },
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false,
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "test/fixture/**/*": "plaintext"
+  },
+}

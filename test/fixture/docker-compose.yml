@@ -1,0 +1,29 @@
+# Production deployment configuration
+# TEMPORARY(2024-02-28): Using Docker Compose until Kubernetes is set up
+
+version: '3.8'
+
+services:
+  # TEMPORARY(2023-12-10): Single container until microservices architecture
+  user-service:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      # temporary environment variables
+      - NODE_ENV=production
+      - DB_HOST=temp-db
+    depends_on:
+      - database
+
+  # TEMPORARY(2024-01-07): SQLite until PostgreSQL cluster is ready
+  database:
+    image: sqlite:latest
+    volumes:
+      - ./data:/data
+    # This is temporary until persistent volumes are configured
+
+# TEMPORARY(2024-03-10): Basic networking until service mesh is implemented
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,30 @@
+/* CSS for user dashboard */
+/* TEMPORARY(2024-01-30): Using inline styles until CSS framework is chosen */
+
+.user-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  /* temporary background color */
+  background-color: #f0f0f0;
+}
+
+/* TEMPORARY(2023-09-01): Hardcoded responsive breakpoints */
+@media (max-width: 768px) {
+  .user-card {
+    width: 100%;
+  }
+}
+
+/* TEMPORARY(2024-06-01): Basic button styling until design system is ready */
+.btn-primary {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+}
+
+/* This is a temporary fix for IE compatibility */
+.ie-fix {
+  filter: none;
+}

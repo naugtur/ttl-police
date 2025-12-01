@@ -1,0 +1,28 @@
+{
+  "name": "user-service-config",
+  "version": "1.0.0",
+  "description": "Configuration for user service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "sqlite3": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "config": {
+    "_comment": "TEMPORARY(2024-01-28): Using file-based config until environment variables are set up",
+    "database": {
+      "path": "./temp.db",
+      "_comment2": "temporary database location"
+    },
+    "server": {
+      "_comment3": "TEMPORARY(2023-01-15): Hardcoded port until deployment config is ready",
+      "port": 3000
+    }
+  }
+}

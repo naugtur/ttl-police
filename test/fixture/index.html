@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <!-- TEMPORARY(2024-02-05): Using CDN until we set up build process -->
+    <link rel="stylesheet" href="https://cdn.example.com/styles.css">
+</head>
+<body>
+    <!-- TEMPORARY(2023-10-01): Hardcoded user data until API is integrated -->
+    <div class="user-list">
+        <div class="user-item">John Doe</div>
+        <div class="user-item">Jane Smith</div>
+    </div>
+    
+    <!-- TEMPORARY(2024-05-01): Basic form without validation -->
+    <form id="user-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Add User</button>
+    </form>
+    
+    <!-- This is a temporary script tag until webpack is configured -->
+    <script>
+        // TEMPORARY(2024-03-01): Inline JavaScript until modules are set up
+        document.getElementById('user-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+</body>
+</html>

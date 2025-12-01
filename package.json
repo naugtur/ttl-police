@@ -1,0 +1,21 @@
+{
+  "name": "ttl-police",
+  "version": "1.0.0",
+  "description": "enforcement for temporary changes to be temporary",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naugtur/ttl-police.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naugtur/ttl-police/issues"
+  },
+  "homepage": "https://github.com/naugtur/ttl-police#readme"
+}
