@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-import { readFile, writeFile } from "node:fs/promises";
-import { glob } from "node:fs/promises";
+import { readFile, writeFile, glob, stat } from "node:fs/promises";
 import { resolve } from "node:path";
 import { cwd, exit, argv } from "node:process";
 import { parseArgs } from "node:util";
 
 const TTL_POLICE_FILE = ".ttl-police";
 const DEFAULT_TTL_DAYS = 7;
-const TEMPORARY_REGEX = /TEMPORARY\((\d{4}-\d{2}-\d{2})\):\s*(.+)/gi;
+const TEMPORARY_REGEX = /TEMPORARY\((\d{4}-\d{2}-\d{2})\):\s*(.+)/g;
 const TEMPORARY_WORD_REGEX = /temporary/gi;
 
 let NOW = new Date();
@@ -197,7 +196,17 @@ async function findFiles(location) {
       cwd: cwd(),
       exclude: ["node_modules/*", ".git/*"],
     })) {
-      files.push(resolve(file));
+      const fullPath = resolve(file);
+      // Only include files, not directories
+      try {
+        const stats = await stat(fullPath);
+        if (stats.isFile()) {
+          files.push(fullPath);
+        }
+      } catch (error) {
+        // Skip files that can't be stat'd
+        continue;
+      }
     }
 
     return files;
